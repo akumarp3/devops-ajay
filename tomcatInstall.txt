@@ -1,0 +1,20 @@
+Q. What is tomcat?
+A. The Apache Tomcat® software is an open source implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies. 
+The Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket specifications are developed under the Java Community Process.
+
+Q. How o install it in Linux?
+A. $ wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz (deownloads tar file into pwd)
+   $ tar xvzf apache-tomcat-8.5.32.tar.gz (extractes the tar file)
+   $ mv apache-tomcat-8.5.32 tomcat8 (rename extracted files)
+   $ cd /conf (moving into conf directory to change configuration files)
+   	In server.xml file, in lines 69 and 75 change port form 8080 to 8181
+	In tomcat-users.xml add below users and add them to roles:
+		<role rolename="admin-gui"/>
+   		<role rolename="manager-gui"/>
+   		<user username="admin" password="tomcat" roles="admin-gui,manager-gui"/>
+   $ cd ..
+   $ cd bin/
+   $ ./startup.sh (starts tomcat server)
+   	We can access the webpage by <ip of server>:8181
+
+   $ ./shutdown.sh (to stop server)
