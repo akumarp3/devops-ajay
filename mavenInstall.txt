@@ -1,0 +1,21 @@
+Q. What are environment variables and PATH variables?
+A. Environment Variables: They hold values related to current environment like Operating system or user sessions.
+   Path:  It specifies the directories in which executable programs* are located on the machine that can be started without knowing and typing the whole path to the file on the command line.
+
+Q. How do we set environment variables and assign them a PATH?
+A. To create environment variables: export <var_name>=<path_of_executable files>
+		$ env (gives list of all environment variables)
+   Assigning PATH(using complete path): export PATH=$PATH:<path> (EX: export PATH=$PATH:/home/mra/Desktop/dir/)
+   Assigning PATH(using Environment Variables): export PATH=$PATH:${<ENV_VAR_NAME>}/bin
+		$ echo $PATH (gives list of all PATH's set)
+
+Q. How to install maven on Linux?
+A. $ wget http://mirror.olnevhost.net/pub/apache/maven/binaries/apache-maven-3.2.1-bin.tar.gz (downloads maven)
+   $ tar xvf apache-maven-3.2.1-bin.tar.gz (extracts maven)
+   $ mv apache-maven-3.5.3 maven (renaming folder)
+   $ sudo maven/ /usr (moving to other directory)
+   $ cd /usr/maven/
+   $ export MAVEN_HOME=/usr/maven ( creating environment variables)
+   $ export M2_HOME=/usr/maven
+   $ export PATH=$PATH:${M2_HOME}/bin (assigning PATH)
+   $ mvn -version (slould show version of maven)
